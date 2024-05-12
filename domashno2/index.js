@@ -1,17 +1,15 @@
 // (а)
 
-const globalNum = 10;
-const localNum = 10
+const globalNum = 10
 function checkScope () {
-    return globalNum;
+    var localNum = globalNum
+    return localNum
 }
-
+console.log(checkScope())
 
 // (б)
 
-console.log(checkScope())
-console.log(globalNum === localNum)
-
+console.log(globalNum === checkScope())
 
 // (в)
 

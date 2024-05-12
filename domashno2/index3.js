@@ -1,11 +1,11 @@
 // (а)
 
-let age = 29
+let age = 21
 // let age = 17
 
-if (age > 21) {
+if (age >= 21) {
     console.log("Можеш легално да купиш алкохол и да гласаш.")
-} else if (age > 18) {
+} else if (age >= 18) {
     console.log("Можеш легално да гласаш, но неможеш да купиш алкохол.")
 } else {
     console.log("Немажеш да купиш алкохол или да гласаш сеуште.")
@@ -43,7 +43,7 @@ function getNumberofDays(month) {
 
 // (в)
 
-    let temperature = 14
+    let temperature = 25
     
     if (temperature > 30) {
         console.log("Жешко е времето!")
