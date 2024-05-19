@@ -278,6 +278,7 @@ console.log("Sum of Ages is: ", sumOfAges)
 
 // (д)
 
+dsadkasndkask
 let leastInhabitantsGroup = zooAnimals
 .reduce((min, current) => current.residents.length < 
 min.residents.length ? current : min, zooAnimals[0])
