@@ -278,15 +278,6 @@ console.log("Sum of Ages is: ", sumOfAges)
 
 // (д)
 
-// const { name: leastInhabitantsGroup } = zooAnimals
-//     .reduce((prev, current) => prev.residents.length < current.residents.length ? prev : current)
-// const { name: mostInhabitantsGroup } = zooAnimals
-//     .reduce((prev, current) => prev.residents.length > current.residents.length ? prev : current)
-
-// const allInhabitants = zooAnimals
-//     .flatMap(animalGroup => animalGroup.residents
-//         .map(resident => resident.name))
-
 let leastInhabitantsGroup = zooAnimals
 .reduce((min, current) => current.residents.length < 
 min.residents.length ? current : min, zooAnimals[0])
