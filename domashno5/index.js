@@ -9,7 +9,7 @@ function printFunc(seconds) {
     }
     setTimeout(function() {
         console.log("Coding is not that hard!")
-    }, 1000)
+    }, seconds * 1000)
 }
 
 printFunc(3)
