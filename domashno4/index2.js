@@ -14,10 +14,11 @@ const countries = [
 
 
 // (а)
-const countriesWithLand = countries.filter((country) => country.includes("land"))
+const countriesWithLand = countries.filter((country) => country.toUpperCase().includes("LAND"))
 
 // (б)
 const countriesFiltered = countries.filter((country) => country.endsWith("ia") && country.length > 7)
 
 
-console.log(countriesWithLand, countriesFiltered)
+console.log(countriesFiltered)
+countriesWithLand.forEach(country => console.log(country.toUpperCase()))

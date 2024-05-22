@@ -23,7 +23,7 @@ const additionalInfo = {
 }
 
 const mergedObject = { ...person, ...additionalInfo }
-// console.log(mergedObject)
+console.log(mergedObject)
 
 
 // (б)

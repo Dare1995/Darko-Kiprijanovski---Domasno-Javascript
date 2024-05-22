@@ -233,7 +233,7 @@ let zooAnimals = [
 function popularAnimals(animals) {
     animals.forEach(animal => {
         if (animal.popularity > 4) {
-            console.log([animal.name])
+            console.log(animal.name)
         }
     })
 }
@@ -251,6 +251,9 @@ const oldestElephant = (zooAnimals) => {
 }
 
 console.log("Name of the oldest elephant is: ", oldestElephant(zooAnimals))
+// let elephants = zooAnimals
+//.filter((el) => el.name === "elephants")[0]
+//.residents.sort((a, b) => b.age - a.age)[0].name
 
 // (в)
 
@@ -259,10 +262,16 @@ const youngFemalePenguins = (zooAnimals) => {
         .find(animal => animal.name === "penguins")
         .residents
         .filter(penguin => penguin.sex === "female" && penguin.age < 10)
-    youngFemalePenguins.forEach(penguin => console.log("Youngest Penguin is: ", penguin.name))
+    // youngFemalePenguins.forEach(penguin => console.log("Youngest Penguin is: ", penguin.name))
+        console.log(youngFemalePenguins[0].name)
 }
 
 youngFemalePenguins(zooAnimals)
+// let penguins = zooAnimals
+// .filter((p) => p.name === "penguins")
+// .map((p) =>
+// p.residents.filter((f) => f.age < 10 && f.sex === "female")
+// )[0][0].name
 
 // (г)
 
@@ -275,6 +284,10 @@ const sumOfAges = animalWithLongestName.residents.reduce((sum, residents) => {
 }, 0)
 
 console.log("Sum of Ages is: ", sumOfAges)
+//let animalGroup = zooAnimals
+//.sort((a, b) => b.name.length - a.name.length)[0]
+//.residents.reduce((total, currEl) => total + currEl.age, 0)
+// console.log(animalGroup)
 
 // (д)
 
@@ -297,3 +310,15 @@ let allInhabitants = zooAnimals.reduce((allNames, group) => {
 console.log("Group with the least number of inhabitants:", leastInhabitantsGroup.name)
 console.log("Group with the largest number of inhabitants:", mostInhabitantsGroup.name)
 console.log("All inhabitants:", allInhabitants)
+
+//let smallestNumOfResidents = zooAnimals
+//.sort((a, b) => a.residents.length - b.residents.length)[0]
+//.residents.map((a) => a.name)
+ 
+//let biggestNumOfResidents = zooAnimals
+//.sort((a, b) => b.residents.length - a.residents.length)[0]
+//.residents.map((a) => a.name)
+ 
+//let allNames = [...smallestNumOfResidents, ...biggestNumOfResidents]
+ 
+//console.log(allNames)
