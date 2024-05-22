@@ -3,7 +3,7 @@ function printFunc(seconds) {
         console.log("Please enter number")
         return 
     }
-    if (seconds < 0 || seconds > 9 || Math.floor(seconds) !== seconds) {
+    if (seconds < 0 || seconds > 9) {
         console.log("Please enter one digit number")
         return 
     }
