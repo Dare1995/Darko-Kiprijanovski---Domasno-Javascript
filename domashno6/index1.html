@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ol id="book-list">
+        <li>The Great Gatsby</li>
+        <li>To Kill a Mockingbird</li>
+        <li>1984</li>
+        <li>The Catcher in the Rye</li>
+        <li>Animal Farm</li>
+        <li>Brave New World</li>
+        <li>Fahrenheit 451</li>
+        <li>Lord of the Flies</li>
+        <li>The Hobbit</li>
+        <li>Harry Potter and the Sorcerer's Stone</li>
+    </ol>
+
+    <script>
+
+        // (а)    
+        function oddListElements() {
+            const bookList = document.getElementById("book-list")
+            const listItems = bookList.getElementsByTagName("li")
+
+            for (let i = 0; i < listItems.length; i++) {
+                if (i % 2 == 0) {
+                    listItems[i].style.backgroundColor = "lightblue"
+                }
+            }
+        }
+        oddListElements()
+
+        // (б)
+        function changeBookTitle(orderedList, oldTitle, newTitle) {
+            const listItems = orderedList.querySelectorAll('li')
+            listItems.forEach(function(item) {
+                if (item.textContent === oldTitle) {
+                    item.textContent = newTitle
+                }
+            })
+        }
+        let bookList = document.getElementById('book-list')
+        changeBookTitle(bookList, "Lord of the Flies", "The Alchemist")
+
+        // (в)
+        function removeBook(orderedList, bookTitle) {
+            const listItems = orderedList.querySelectorAll('li')
+            listItems.forEach(function(item) {
+                if (item.textContent === bookTitle) {
+                    item.remove()
+                }
+            })
+        }
+        removeBook(bookList, "The Catcher in the Rye")
+    </script>
+</body>
+
+</html>

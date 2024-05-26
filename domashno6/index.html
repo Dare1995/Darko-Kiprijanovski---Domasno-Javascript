@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Manipulation</title>
+  </head>
+  <body>
+    <ul id="carList">
+      <li>Mercedes</li>
+      <li>BMW</li>
+      <li>Audi</li>
+    </ul>
+    <script>
+      
+      const carListItems = document.querySelectorAll("#carList li")
+      carListItems.forEach(item => {
+        item.style.color = "blue"
+      })
+
+      
+      const carList = document.getElementById("carList")
+      const newCar = document.createElement("li")
+      newCar.textContent = "Ferrari"
+      carList.appendChild(newCar)
+    
+    </script>
+  </body>
+</html>

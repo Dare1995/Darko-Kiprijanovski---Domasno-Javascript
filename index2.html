@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Quiz</title>
+</head>
+
+<body>
+  <div id="quiz-container">
+    <!-- Quiz content will be dynamically generated here -->
+  </div>
+
+  <script>
+    
+    const quizData = [
+      {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "Paris", "Rome"],
+        correctAnswer: "Paris",
+      },
+      {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Mars", "Jupiter", "Venus"],
+        correctAnswer: "Mars",
+      },
+      {
+        question: "What is the largest mammal on Earth?",
+        options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+        correctAnswer: "Blue Whale",
+      },
+      {
+        question: "In which year did the Titanic sink?",
+        options: ["1905", "1912", "1920", "1931"],
+        correctAnswer: "1912",
+      },
+      {
+        question: "Who wrote 'Romeo and Juliet'?",
+        options: [
+          "Charles Dickens",
+          "Jane Austen",
+          "William Shakespeare",
+          "Mark Twain",
+        ],
+        correctAnswer: "William Shakespeare",
+      },
+    ];
+
+
+    const quizContainer = document.getElementById('quiz-container')
+
+    function createQuiz() {
+      quizData.forEach((questionObj, index) => {
+        const questionElement = document.createElement('div')
+        questionElement.textContent = `${index + 1}. ${questionObj.question}`
+
+        questionObj.options.forEach(option => {
+          const optionElement = document.createElement('div')
+          const inputElement = document.createElement('input')
+          inputElement.setAttribute('type', 'radio')
+          inputElement.setAttribute('name', `question${index}`)
+          inputElement.setAttribute('value', option);
+          const labelElement = document.createElement('label')
+          labelElement.textContent = option
+
+          optionElement.appendChild(inputElement)
+          optionElement.appendChild(labelElement)
+          questionElement.appendChild(optionElement)
+        })
+
+        quizContainer.appendChild(questionElement)
+      })
+    }
+
+    createQuiz()
+  
+  </script>
+</body>
+
+</html>
