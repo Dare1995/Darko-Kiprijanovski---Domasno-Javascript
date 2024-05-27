@@ -54,8 +54,8 @@
       quizData.forEach((questionObj, index) => {
         const questionElement = document.createElement('div')
         questionElement.textContent = `${index + 1}. ${questionObj.question}`
-
-        questionObj.options.forEach(option => {
+       
+          questionObj.options.forEach(option => {
           const optionElement = document.createElement('div')
           const inputElement = document.createElement('input')
           inputElement.setAttribute('type', 'radio')
