@@ -34,17 +34,27 @@
     <script>
 
         // (а)    
-        function oddListElements() {
-            const bookList = document.getElementById("book-list")
-            const listItems = bookList.getElementsByTagName("li")
+        // function oddListElements() {
+        //     const bookList = document.getElementById("book-list")
+        //     const listItems = bookList.getElementsByTagName("li")
 
-            for (let i = 0; i < listItems.length; i++) {
-                if (i % 2 == 0) {
-                    listItems[i].style.backgroundColor = "lightblue"
-                }
-            }
-        }
-        oddListElements()
+        //     for (let i = 0; i < listItems.length; i++) {
+        //         if (i % 2 == 0) {
+        //             listItems[i].style.backgroundColor = "lightblue"
+        //         }
+        //     }
+        // }
+        // oddListElements()
+
+        function oddListElements() {
+        var bookList = document.getElementById("book-list")
+        Array.from(bookList.children).forEach(function(element, index) {
+        if (index % 2 !== 0) {
+        element.style.backgroundColor = "lightblue"
+    }
+  })
+}
+oddListElements()
 
         // (б)
         function changeBookTitle(orderedList, oldTitle, newTitle) {
