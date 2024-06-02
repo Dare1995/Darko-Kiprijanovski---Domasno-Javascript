@@ -1,0 +1,25 @@
+#character-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.character-card {
+    border: 1px solid #c2bebe;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.character-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.character-card h2 {
+    margin-top: 0;
+}
+
+.character-card p {
+    margin: 5px 0;
+}

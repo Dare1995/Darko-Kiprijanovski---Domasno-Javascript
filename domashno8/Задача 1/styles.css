@@ -1,0 +1,15 @@
+.user {
+    border: 1px solid rgb(151, 146, 146);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    
+}
+
+.user p {
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+
