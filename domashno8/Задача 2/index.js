@@ -7,7 +7,8 @@ function fetchCharacters() {
 
             characters.forEach(character => {
                 const card = document.createElement('div')
-                card.classList.add('character-card');
+                card.classList.add('character-card')
+                characterGrid.appendChild(card);
 
                 const statusColor = getStatusColor(character.status);
 
@@ -18,8 +19,6 @@ function fetchCharacters() {
                         <p>Status: <span style="color: ${statusColor};">${character.status}</span></p>
                         <p>Number of episodes: ${character.episode.length}</p>
                     `
-
-                characterGrid.appendChild(card);
             })
         })
         .catch(error => console.error('Error fetching characters:', error));
