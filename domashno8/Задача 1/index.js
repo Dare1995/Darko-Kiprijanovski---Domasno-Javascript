@@ -7,6 +7,7 @@ const fetchUsers = async () => {
         data.forEach(user => { 
             const userDiv = document.createElement('div')
             userDiv.classList.add('user')
+            usersContainer.appendChild(userDiv)
             
             const name = document.createElement('p')
             name.textContent = `Name: ${user.name}`
@@ -20,7 +21,6 @@ const fetchUsers = async () => {
             company.textContent = `Company: ${user.company.name}`
             userDiv.appendChild(company)
             
-            usersContainer.appendChild(userDiv)
         })
     } catch (error) {
         console.error('Error fetching data:', error)
