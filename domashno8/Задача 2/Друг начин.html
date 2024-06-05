@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 7 - Exercise 2</title>
+    <style>
+      body {
+        display: flex;
+        padding: 20px;
+      }
+ 
+      .character-card {
+        border: 1px solid black;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        width: 250px;
+      }
+ 
+      .character-card img {
+        max-width: 100%;
+        border-radius: 4px;
+      }
+ 
+      .alive {
+        color: green;
+      }
+ 
+      .dead {
+        color: red;
+      }
+ 
+      .unknown {
+        color: gray;
+      }
+ 
+      #charactersContainer {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="charactersContainer"></div>
+    <script>
+      const charactersContainer = document.getElementById("charactersContainer")
+ 
+      async function fetchCharacters() {
+        try {
+          const response = await fetch(
+            "https://rickandmortyapi.com/api/character"
+          )
+          const data = await response.json()
+          return data
+        } catch (error) {
+          console.log("Error fetching data:", error)
+        }
+      }
+ 
+      function createCharacterCard(character) {
+        const card = document.createElement("div")
+        card.classList.add("character-card")
+ 
+        const characterImg = document.createElement("img")
+        characterImg.src = character.image
+        characterImg.alt = character.name
+ 
+        const characterName = document.createElement("p")
+        characterName.textContent = character.name
+ 
+        const characterStatus = document.createElement("p")
+        characterStatus.textContent = character.status
+        characterStatus.classList.add(character.status.toLowerCase())
+ 
+        const characterGender = document.createElement("p")
+        characterGender.textContent = character.gender
+ 
+        const characterEpisodesCount = document.createElement("p")
+        characterEpisodesCount.textContent = `Episodes: ${character.episode.length}`
+ 
+        card.appendChild(characterImg)
+        card.appendChild(characterName)
+        card.appendChild(characterStatus)
+        card.appendChild(characterGender)
+        card.appendChild(characterEpisodesCount)
+ 
+        return card
+      }
+ 
+      async function displayCharacters() {
+        const characters = await fetchCharacters()
+        console.log(characters)
+        characters.results.forEach((character) => {
+          const card = createCharacterCard(character)
+          charactersContainer.appendChild(card)
+        })
+      }
+ 
+      displayCharacters()
+    </script>
+  </body>
+</html>

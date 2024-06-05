@@ -2,12 +2,12 @@ function fetchCharacters() {
     fetch('https://rickandmortyapi.com/api/character')
         .then(response => response.json())
         .then(data => {
-            const characters = data.results
+            const characters = data.results;
             const characterGrid = document.getElementById('character-grid');
 
             characters.forEach(character => {
-                const card = document.createElement('div')
-                card.classList.add('character-card')
+                const card = document.createElement('div');
+                card.classList.add('character-card');
                 characterGrid.appendChild(card);
 
                 const statusColor = getStatusColor(character.status);
@@ -23,7 +23,7 @@ function fetchCharacters() {
         })
         .catch(error => console.error('Error fetching characters:', error));
 
-    function getStatusColor(status) {
+        function getStatusColor(status) {
         switch (status) {
             case 'Alive':
                 return 'green'
@@ -35,3 +35,6 @@ function fetchCharacters() {
     }
 }
 fetchCharacters()
+
+
+
